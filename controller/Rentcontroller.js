@@ -7,7 +7,7 @@ class Rentcontroller{
             const doc = new rentcarModel(req.body)
             const r = await doc.save()
 
-            res.send({"email":email, "model":model})
+            res.send({"email":r.email, "model":r.model})
 
             // console.log(email)
         } catch (error) {
