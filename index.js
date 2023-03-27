@@ -1,12 +1,11 @@
 import express from 'express'
 import cors from 'cors'
-const app = express()
-
-app.use(cors())
 import dotenv  from 'dotenv'
 import web from './routes/web.js'
 dotenv.config()
 import connectDB from './db/connectDB.js'
+const app = express()
+app.use(cors())
 const port = process.env.PORT
 app.use(express.json())
 // app.use(express.urlencoded({extended:true}))
