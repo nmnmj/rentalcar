@@ -7,6 +7,6 @@ const router = express.Router()
 router.get("/", cors() ,(req,res)=>{
     res.send("work")
 })
-router.post("/book",  Rentcontroller.book)
+router.post("/book", cors() , Rentcontroller.book)
 
 export default router
