@@ -8,7 +8,7 @@ dotenv.config()
 import connectDB from './db/connectDB.js'
 const port = process.env.PORT
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+// app.use(express.urlencoded({extended:true}))
 connectDB(process.env.DATABASE_URL)
 app.use("/", web)
 
