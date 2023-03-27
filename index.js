@@ -2,8 +2,8 @@ import express from 'express'
 import cors from 'cors'
 const app = express()
 app.use(cors({
-    origin: 'http://localhost:3000/'
-}))
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 import dotenv  from 'dotenv'
 import web from './routes/web.js'
 dotenv.config()
