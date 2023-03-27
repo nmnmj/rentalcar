@@ -1,3 +1,4 @@
+import cors from 'cors'
 import express from 'express'
 import dotenv  from 'dotenv'
 import cookieParser from 'cookie-parser'
@@ -6,7 +7,6 @@ dotenv.config()
 import connectDB from './db/connectDB.js'
 const port = process.env.PORT
 const app = express()
-import cors from 'cors'
 app.use(cors())
 app.use(cookieParser())
 app.use(express.json())
