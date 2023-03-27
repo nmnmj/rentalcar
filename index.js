@@ -3,12 +3,10 @@ import cors from 'cors'
 const app = express()
 app.use(cors())
 import dotenv  from 'dotenv'
-import cookieParser from 'cookie-parser'
 import web from './routes/web.js'
 dotenv.config()
 import connectDB from './db/connectDB.js'
 const port = process.env.PORT
-app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 connectDB(process.env.DATABASE_URL)
