@@ -8,7 +8,7 @@ const app = express()
 app.use(cors())
 const port = process.env.PORT
 app.use(express.json())
-// app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:false}))
 connectDB(process.env.DATABASE_URL)
 app.use("/", web)
 
