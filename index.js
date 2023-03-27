@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 const app = express()
 app.use(cors({
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+    origin: 'https://rentalcar-2a2t8sb6q-nmnmj.vercel.app/'
 }));
 import dotenv  from 'dotenv'
 import web from './routes/web.js'
