@@ -1,16 +1,17 @@
 import express from 'express'
 import Rentcontroller from '../controller/Rentcontroller.js'
-import cors from 'cors'
 
 const router = express.Router()
 
-router.get("/", cors() ,(req,res)=>{
-    res.send("work")
+router.get("/" ,async (req,res)=>{
+    const r = rentcarModel.find();
+
+    res.send(r)
 })
 router.post("/",(req,res)=>{
-    const {rent, year}= req.body
-    res.send({"year":year})
+    const {rent, year, email, fuel, ac, address, mobile, model}= req.body
+    res.send({"year":year, "model":model})
 })
-router.post("/book", cors() , Rentcontroller.book)
+router.post("/book" , Rentcontroller.book)
 
 export default router
