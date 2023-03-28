@@ -11,9 +11,18 @@ router.get("/" ,async (req,res)=>{
 })
 router.post("/",async (req,res)=>{
     const {rent, year, email, fuel, ac, address, mobile, model}= req.body
-    const doc = await new rentcarModel(req.body)
+    const doc =  new rentcarModel(req.body)
     const r = await doc.save()
     res.send({"year":year, "model":model, "email":email})
+})
+
+router.delete("/:email", async (req, res)=>{
+    try {
+        const r = await rentcarModel.findOneAndDelete(req.params.email)
+        res.status(204).send({"status":"deleted"})
+    } catch (error) {
+        console.log(error)
+    }
 })
 router.post("/book" , Rentcontroller.book)
 
