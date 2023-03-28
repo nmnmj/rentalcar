@@ -9,9 +9,11 @@ router.get("/" ,async (req,res)=>{
 
     res.send(r)
 })
-router.post("/",(req,res)=>{
+router.post("/",async (req,res)=>{
     const {rent, year, email, fuel, ac, address, mobile, model}= req.body
-    res.send({"year":year, "model":model})
+    const doc = await new rentcarModel.create(req.body)
+    const r = await doc.save()
+    res.send({"year":year, "model":model, "email":email})
 })
 router.post("/book" , Rentcontroller.book)
 
