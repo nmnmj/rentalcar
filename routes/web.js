@@ -1,10 +1,11 @@
 import express from 'express'
 import Rentcontroller from '../controller/Rentcontroller.js'
+import rentcarModel from '../model/rentcar.js';
 
 const router = express.Router()
 
 router.get("/" ,async (req,res)=>{
-    const r = rentcarModel.find();
+    const r = await rentcarModel.find();
 
     res.send(r)
 })
